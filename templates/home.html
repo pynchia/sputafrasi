@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block h2 %}
+Ciao {{ usr }}, guarda cosa potrebbero fare i tuoi amici:
+{% endblock %}
+{% block content %}
+<p>(<a href="https://apps.facebook.com/sputafrasi{% url editpref %}" target="_top">preferenze utente</a>)</p>
+<p>Seleziona le frasi da condividere in bacheca (solo le prime {{ max_quotes_pub }} saranno pubblicate) e clicca sul bottone a fondo pagina</p>
+<form method="post" action="{% url update_status %}" >
+<input type="hidden" name="usrid" value="{{ usrid }}" />
+<table>
+{% for quote in quotelist %}
+<tr class="{% cycle "" "alt" %}">
+    <td><input type="checkbox" name="cbquote" value="{{ quote }}" /></td>
+	<td>&nbsp;{{ quote }}</td>
+</tr>
+{% endfor %}
+</table>
+<input type="submit" value="Condividi"/>
+</form>
+{% endblock %}

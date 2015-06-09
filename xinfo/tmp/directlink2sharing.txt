@@ -1,0 +1,9 @@
+<a href="https://www.facebook.com/dialog/feed?
+            app_id=540822269291333&
+            link=https://developers.facebook.com/docs/reference/dialogs/&
+            picture=http://pynchia.pythonanywhere.com/static/icon75x75w.png&
+            name=Sputafrasi&
+            caption=ciao&
+            description={{ quote|urlencode }}&
+            redirect_uri=https://apps.facebook.com/sputafrasi/alldone"
+            target="_top">condividi</a>
